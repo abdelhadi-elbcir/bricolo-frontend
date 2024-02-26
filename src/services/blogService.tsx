@@ -1,17 +1,5 @@
-// BlogDto.ts
 import axios from "axios";
-
-export interface BlogDto {
-    title: string;
-    body: string;
-    image: string;
-    userDto: UserDto;
-  }
-  
-export interface UserDto {
-    id:number;
-}
-
+import { BlogDto } from "../utils/models/blogDto";
 
 const API_BASE_URL = process.env.api_url; // Replace with your actual API base URL
 

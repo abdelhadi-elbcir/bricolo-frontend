@@ -1,18 +1,5 @@
-// UserService.ts
 import axios from 'axios';
-// UserDto.ts
-export interface UserDto {
-    phone: string;
-    address: string;
-    about: string;
-    linkedin: string;
-    instagram: string;
-    youtube: string;
-    facebook: string;
-    image: string;
-    firstname: string;
-    lastname: string;
-  }
+import { UserDto } from '../utils/models/UserDto';
   
 
 const API_BASE_URL = process.env.api_url; // Replace with your actual API base URL

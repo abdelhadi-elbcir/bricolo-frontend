@@ -1,8 +1,5 @@
 import axios from "axios";
-export interface CategoryDto {
-    id?: number;
-    name: string;
-  }
+import { CategoryDto } from "../utils/models/categoryDto";
 
 
 const API_BASE_URL = process.env.api_url; // Replace with your actual API base URL

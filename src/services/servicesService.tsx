@@ -1,22 +1,8 @@
 import axios from "axios";
-
-import { CategoryDto } from './categoryService';
-import { CityDto } from './cityService';
-import { UserDto } from './userService';
+import { ServiceDto } from "../utils/models/serviceDto";
 
 
-export interface ServiceDto {
-    title: string;
-    price: number;
-    description: string;
-    image: string;
-    phone: string;
-    cityDto: CityDto;
-    categoryDto: CategoryDto;
-    userDto: UserDto;
-}
-
-const API_BASE_URL = 'your_api_base_url'; // Replace with your actual API base URL
+const API_BASE_URL = process.env.api_url;
 
 export const getAllServices = async (): Promise<ServiceDto[]> => {
     const response = await axios.get(`${API_BASE_URL}/services`);

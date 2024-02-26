@@ -1,13 +1,9 @@
-import { UserDto } from './userService';
 import axios from 'axios';
-
-export interface CommentDto {
-  text: string;
-  userDto: UserDto;
-}
+import { CommentDto } from '../utils/models/commentDto';
 
 
-const API_BASE_URL = 'your_api_base_url'; // Replace with your actual API base URL
+
+const API_BASE_URL = process.env.api_url; // Replace with your actual API base URL
 
 export const getAllComments = async (): Promise<CommentDto[]> => {
   const response = await axios.get(`${API_BASE_URL}/comments`);

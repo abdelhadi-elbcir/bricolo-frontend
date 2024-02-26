@@ -1,8 +1,5 @@
 import axios from "axios";
-export interface CityDto {
-    id?: number;
-    name: string;
-}
+import { CityDto } from "../utils/models/cityDto";
 
 const API_BASE_URL = process.env.api_url; // Replace with your actual API base URL
 
