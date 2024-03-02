@@ -1,12 +1,12 @@
 import axios from "axios";
 import { CityDto } from "../utils/models/cityDto";
+import { baseUrl } from "../utils/api/baseUrl";
 
-const API_BASE_URL = process.env.api_url; // Replace with your actual API base URL
+const API_BASE_URL = baseUrl;
 
 export const getAllCities = async (): Promise<CityDto[]> => {
-    const response = await axios.get(`${API_BASE_URL}/cities`);
-    return response.data;
-};
+    return axios.get(`${API_BASE_URL}/api/city/all`)
+}
 
 export const getCityById = async (id: number): Promise<CityDto | null> => {
     try {
@@ -21,15 +21,15 @@ export const getCityById = async (id: number): Promise<CityDto | null> => {
 };
 
 export const createCity = async (cityData: CityDto): Promise<CityDto> => {
-    const response = await axios.post(`${API_BASE_URL}/cities`, cityData);
+    const response = await axios.post(`${API_BASE_URL}/api/city/add`, cityData);
     return response.data;
 };
 
 export const updateCity = async (id: number, cityData: CityDto): Promise<CityDto> => {
-    const response = await axios.put(`${API_BASE_URL}/cities/${id}`, cityData);
+    const response = await axios.put(`${API_BASE_URL}/api/city/edit/${id}`, cityData);
     return response.data;
 };
 
 export const deleteCity = async (id: number): Promise<void> => {
-    await axios.delete(`${API_BASE_URL}/cities/${id}`);
+    await axios.delete(`${API_BASE_URL}/api/city/delete/${id}`);
 };
